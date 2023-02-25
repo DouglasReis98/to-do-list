@@ -1,0 +1,30 @@
+#novaTarefa{
+    display: block;
+    float: left;
+    width: calc(100% - 8.3rem);
+}
+
+#btnNovaTarefa{
+    float: left;
+}
+
+#inNovaTarefa{
+    width: calc(100% - 3.7rem);
+}
+
+article {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+article h5 {
+    margin: .5em;
+}
+
+.controls i {
+    cursor: pointer;
+    margin: .5em;
+    font-size: .7em;    
+    /*color: rgb(21, 95, 255);*/
+}
