@@ -1,7 +1,13 @@
 #novaTarefa{
-    display: block;
+    display: none;
     float: left;
     width: calc(100% - 8.3rem);
+}
+
+#novaTarefa button{
+    line-height: .5em;
+    margin-bottom: 0.3em;
+    height: 2em;
 }
 
 #btnNovaTarefa{
