@@ -32,15 +32,14 @@ frm.addEventListener("submit", (e) => {
 })
 
 function mostrarTarefas() {
-    if (!JSON.parse(localStorage.getItem("outTarefa"))) {
+    if (!JSON.parse(localStorage.getItem("outTarefa")).length == 1 && tarefas.length == 0) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
 
-    } else {
 
+    } else {
         const tarefas = JSON.parse(localStorage.getItem("outTarefa"));
-        //console.log(outTarefa)
         containerTarefas.innerHTML = ""
         for (let i = 0; i < tarefas.length; i++) {
             let article = document.createElement("article");
@@ -58,7 +57,14 @@ function mostrarTarefas() {
 }
 
 function tarefaConcluida(i) {
-    console.log("Tarefa Concluída" + [i]);
+    let mensagem = "Esta tarefa foi concluída?"
+    if (confirm(mensagem) == true) {
+        tarefas = JSON.parse(localStorage.getItem("outTarefa"));
+        let concluida = tarefas.splice(i, 1);
+        localStorage.setItem("outTarefa", JSON.stringify(tarefas));
+        mostrarTarefas();
+        console.log("Última tarefa concluída: " + concluida)
+    }
 };
 
 function editarTarefa(i) {

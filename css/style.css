@@ -34,3 +34,13 @@ article h5 {
     font-size: .7em;    
     /*color: rgb(21, 95, 255);*/
 }
+
+footer{
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+footer span{
+    text-decoration: underline;
+}
