@@ -10,10 +10,10 @@ btnNovaTarefa.addEventListener("click", () => {
     }
 })
 
+let tarefas = [];
+
 frm.addEventListener("submit", (e) => {
     e.preventDefault()
-
-    let tarefas = [];
 
     if (localStorage.getItem("outTarefa")) {
 
@@ -21,7 +21,7 @@ frm.addEventListener("submit", (e) => {
 
     }
     const tarefa = frm.inNovaTarefa.value;
-    
+
     if (tarefa != "") {
         tarefas.push(tarefa);
         localStorage.setItem("outTarefa", JSON.stringify(tarefas));
@@ -31,14 +31,12 @@ frm.addEventListener("submit", (e) => {
     }
 })
 
-
-
 function mostrarTarefas() {
     if (!JSON.parse(localStorage.getItem("outTarefa"))) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
-        localStorage.clear();
+
     } else {
 
         const tarefas = JSON.parse(localStorage.getItem("outTarefa"));
@@ -69,8 +67,7 @@ function editarTarefa(i) {
 
 function excluirTarefa(i) {
     let mensagem = "Deseja excluir esta tarefa?"
-    if (confirm(mensagem) == true) {    
-        let tarefas = [];
+    if (confirm(mensagem) == true) {
         tarefas = JSON.parse(localStorage.getItem("outTarefa"));
         tarefas.splice(i, 1);
         localStorage.setItem("outTarefa", JSON.stringify(tarefas));
