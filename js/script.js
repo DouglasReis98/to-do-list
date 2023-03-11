@@ -63,6 +63,10 @@ function tarefaConcluida(i) {
         let concluida = tarefas.splice(i, 1);
         localStorage.setItem("outTarefa", JSON.stringify(tarefas));
         mostrarTarefas();
+        let footer = document.createElement("footer");
+        footer.className = "bg-success text-white w-100"
+        footer.innerHTML = `<h2 class="ms-3 me-3">Última Tarefa Concluída: <span>${concluida}</span></h2>`;
+        document.body.appendChild(footer);
         console.log("Última tarefa concluída: " + concluida)
     }
 };
