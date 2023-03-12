@@ -11,6 +11,8 @@ btnNovaTarefa.addEventListener("click", () => {
 })
 
 let tarefas = [];
+localStorage.setItem("outTarefa", JSON.stringify(tarefas));
+
 
 frm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -32,7 +34,7 @@ frm.addEventListener("submit", (e) => {
 })
 
 function mostrarTarefas() {
-    if (!JSON.parse(localStorage.getItem("outTarefa")) && tarefas.length == 0) {
+    if (!JSON.parse(localStorage.getItem("outTarefa")).length == 1 && tarefas.length == 0) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
