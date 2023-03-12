@@ -8,6 +8,7 @@ btnNovaTarefa.addEventListener("click", () => {
     if (novaTarefa.style.display = "none") {
         novaTarefa.style.display = "block"
     }
+    document.getElementById("inNovaTarefa").focus();
 })
 
 let tarefas = [];
@@ -83,11 +84,13 @@ function editarTarefa(i) {
     editar.innerHTML = `
     <input type="text" id="editarTarefa" value="${tarefas[i]}" class="">
     <div class="controls m-1">
-    <button type="submit" class="btn btn-success"> <i id="confirmar-edicao" class="fa-regular fa-chevron-right"></i> </button>
-    <button type="reset" class="btn btn-danger"> <i id="cancelar-edicao" class="fa-solid fa-xmark"></i> </button>
+    <button type="submit" class="btn btn-success" id="confirmar-edicao"> <i class="fa-regular fa-chevron-right"></i> </button>
+    <button type="reset" class="btn btn-danger" id="cancelar-edicao"> <i class="fa-solid fa-xmark"></i> </button>
     </div>`
     let text = document.getElementsByTagName("h5")[i];
     text.appendChild(editar)
+
+    document.getElementById("editarTarefa").focus();
 
     let editFrm = document.getElementById("editFrm")
     let cancelarEdicao = document.getElementById("cancelar-edicao");

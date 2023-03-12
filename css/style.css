@@ -22,12 +22,6 @@
     width: 100%;
 }
 
-#confirmar-edicao, #cancelar-edicao{
-    padding: 0;
-    width: 1em;
-    height: 1em;
-}
-
 article {
     display: flex;
     justify-content: space-between;
