@@ -14,18 +14,19 @@
     float: left;
 }
 
-#inNovaTarefa{
-    width: calc(100% - 3.7rem);
+#editFrm{
+    width: 100%;
+    margin: 0 .5em 0 .5em;
 }
 
-#editarTarefa{
-    width: 100%;
+#inNovaTarefa{
+    width: calc(100% - 3.7rem);
 }
 
 article {
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
 }
 

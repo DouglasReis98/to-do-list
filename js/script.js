@@ -33,7 +33,7 @@ frm.addEventListener("submit", (e) => {
 })
 
 function mostrarTarefas() {
-    if ((JSON.parse(localStorage.getItem("outTarefa")) == null && tarefas.length == 0) || !JSON.parse(localStorage.getItem("outTarefa")).length == 1)  {
+    if ((JSON.parse(localStorage.getItem("outTarefa")) == null && tarefas.length == 0) || !JSON.parse(localStorage.getItem("outTarefa")).length == 1) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
@@ -79,36 +79,35 @@ function editarTarefa(i) {
 
     tarefas = JSON.parse(localStorage.getItem("outTarefa"));
 
-    let editar = document.createElement("form");
-    editar.id = "editFrm";
-    editar.innerHTML = `
-    <input type="text" id="editarTarefa" value="${tarefas[i]}" class="">
-    <div class="controls m-1">
-    <button type="submit" class="btn btn-success" id="confirmar-edicao"> <i class="fa-regular fa-chevron-right"></i> </button>
-    <button type="reset" class="btn btn-danger" id="cancelar-edicao"> <i class="fa-solid fa-xmark"></i> </button>
-    </div>`
-    let text = document.getElementsByTagName("h5")[i];
-    text.appendChild(editar)
+        let editar = document.createElement("form");
+        editar.id = "editFrm";
+        editar.innerHTML = `<input type="text" id="editarTarefa" value="${tarefas[i]}" class="w-100">
+                            <div class="controls m-1">
+                            <button type="submit" class="btn btn-success" id="confirmar-edicao"> <i class="fa-regular fa-chevron-right"></i> </button>
+                            <button type="reset" class="btn btn-danger" id="cancelar-edicao"> <i class="fa-solid fa-xmark"></i> </button>
+                            </div>`
+        let text = document.getElementsByClassName("controls")[i];
+        text.insertAdjacentElement("afterend", editar)[i]
 
-    document.getElementById("editarTarefa").focus();
+        document.getElementById("editarTarefa").focus();
 
-    let editFrm = document.getElementById("editFrm")
-    let cancelarEdicao = document.getElementById("cancelar-edicao");
+        let editFrm = document.getElementById("editFrm")
+        let cancelarEdicao = document.getElementById("cancelar-edicao");
 
-    editFrm.addEventListener("submit", () => {
+        editFrm.addEventListener("submit", () => {
 
-        const novaTarefa = editFrm.editarTarefa.value;
+            const novaTarefa = editFrm.editarTarefa.value;
 
-        tarefas = JSON.parse(localStorage.getItem("outTarefa"));
+            tarefas = JSON.parse(localStorage.getItem("outTarefa"));
 
-        tarefas[i] = novaTarefa;
+            tarefas[i] = novaTarefa;
 
-        localStorage.setItem("outTarefa", JSON.stringify(tarefas));
+            localStorage.setItem("outTarefa", JSON.stringify(tarefas));
 
-    })
-
-    cancelarEdicao.addEventListener("click", () => { text.removeChild(editar) })
-
+        })
+        
+        cancelarEdicao.addEventListener("click", () => { editar.remove();})
+        
 
 };
 
