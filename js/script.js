@@ -47,9 +47,9 @@ function mostrarTarefas() {
             article.className = 'border border-info m-2'
             article.innerHTML = `<h5>${tarefas[i]}</h5>
                                     <div class="controls m-1">
-                                        <button onclick="tarefaConcluida(${[i]})" class="btn btn-success"> <i class="fa-regular fa-circle-check"></i></button>
-                                        <button onclick="editarTarefa(${[i]})" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></button>
-                                        <button onclick="excluirTarefa(${[i]})" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                        <button onclick="tarefaConcluida(${[i]})" class="btn btn-success btn-sm"> <i class="fa-regular fa-circle-check"></i></button>
+                                        <button onclick="editarTarefa(${[i]})" class="btn btn-warning btn-sm"><i class="fa-solid fa-pencil"></i></button>
+                                        <button onclick="excluirTarefa(${[i]})" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
                                     </div>`;
             containerTarefas.append(article)
         }
