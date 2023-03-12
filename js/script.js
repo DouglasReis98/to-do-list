@@ -92,14 +92,13 @@ function editarTarefa(i) {
     let editFrm = document.getElementById("editFrm")
     let cancelarEdicao = document.getElementById("cancelar-edicao");
 
-    editFrm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    editFrm.addEventListener("submit", () => {
+
         const novaTarefa = editFrm.editarTarefa.value;
 
         tarefas = JSON.parse(localStorage.getItem("outTarefa"));
 
-        tarefas.splice(tarefas[i], 1, novaTarefa)
-        //tarefas[i] = novaTarefa;
+        tarefas[i] = novaTarefa;
 
         localStorage.setItem("outTarefa", JSON.stringify(tarefas));
 
