@@ -83,8 +83,8 @@ function editarTarefa(i) {
     editar.innerHTML = `
     <input type="text" id="editarTarefa" value="${tarefas[i]}" class="">
     <div class="controls m-1">
-    <button type="submit"> <i id="confirmar-edicao" class="fa-regular fa-chevron-right btn btn-success"></i> </button>
-    <button type="reset"> <i id="cancelar-edicao" class="fa-solid fa-xmark btn btn-danger"></i> </button>
+    <button type="submit" class="btn btn-success"> <i id="confirmar-edicao" class="fa-regular fa-chevron-right"></i> </button>
+    <button type="reset" class="btn btn-danger"> <i id="cancelar-edicao" class="fa-solid fa-xmark"></i> </button>
     </div>`
     let text = document.getElementsByTagName("h5")[i];
     text.appendChild(editar)

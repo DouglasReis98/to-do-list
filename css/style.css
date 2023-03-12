@@ -18,8 +18,14 @@
     width: calc(100% - 3.7rem);
 }
 
-#editar-tarefa{
+#editarTarefa{
     width: 100%;
+}
+
+#confirmar-edicao, #cancelar-edicao{
+    padding: 0;
+    width: 1em;
+    height: 1em;
 }
 
 article {
