@@ -18,6 +18,10 @@
     width: calc(100% - 3.7rem);
 }
 
+#editar-tarefa{
+    width: 100%;
+}
+
 article {
     display: flex;
     justify-content: space-between;

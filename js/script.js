@@ -32,7 +32,7 @@ frm.addEventListener("submit", (e) => {
 })
 
 function mostrarTarefas() {
-    if (!JSON.parse(localStorage.getItem("outTarefa")).length == 1 && tarefas.length == 0) {
+    if (JSON.parse(localStorage.getItem("outTarefa")) == null || tarefas.length == 0) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
@@ -67,12 +67,46 @@ function tarefaConcluida(i) {
         footer.className = "bg-success text-white w-100"
         footer.innerHTML = `<h2 class="ms-3 me-3">Última Tarefa Concluída: <span>${concluida}</span></h2>`;
         document.body.appendChild(footer);
-        console.log("Última tarefa concluída: " + concluida)
     }
 };
 
 function editarTarefa(i) {
-    console.log("Editar Tarefa" + [i]);
+    if (novaTarefa.style.display = "block") {
+        frm.reset();
+        novaTarefa.style.display = "none"
+    }
+
+    tarefas = JSON.parse(localStorage.getItem("outTarefa"));
+
+    let editar = document.createElement("form");
+    editar.id = "editFrm";
+    editar.innerHTML = `
+    <input type="text" id="editarTarefa" value="${tarefas[i]}" class="">
+    <div class="controls m-1">
+    <button type="submit"> <i id="confirmar-edicao" class="fa-regular fa-chevron-right btn btn-success"></i> </button>
+    <button type="reset"> <i id="cancelar-edicao" class="fa-solid fa-xmark btn btn-danger"></i> </button>
+    </div>`
+    let text = document.getElementsByTagName("h5")[i];
+    text.appendChild(editar)
+
+    let editFrm = document.getElementById("editFrm")
+    let cancelarEdicao = document.getElementById("cancelar-edicao");
+
+    editFrm.addEventListener("submit", () => {
+
+        const novaTarefa = editFrm.editarTarefa.value;
+
+        tarefas = JSON.parse(localStorage.getItem("outTarefa"));
+
+        tarefas[i] = novaTarefa;
+
+        localStorage.setItem("outTarefa", JSON.stringify(tarefas));
+
+    })
+
+    cancelarEdicao.addEventListener("click", () => { text.removeChild(editar) })
+
+
 };
 
 function excluirTarefa(i) {
