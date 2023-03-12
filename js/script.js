@@ -32,7 +32,7 @@ frm.addEventListener("submit", (e) => {
 })
 
 function mostrarTarefas() {
-    if (JSON.parse(localStorage.getItem("outTarefa")) == null || tarefas.length == 0) {
+    if (!JSON.parse(localStorage.getItem("outTarefa")) && tarefas.length == 0) {
         containerTarefas.innerHTML = `<article class="border border-info m-2">
                                         <h5>Não há tarefas cadastradas aqui!!!</h5>
                                         </article>`
