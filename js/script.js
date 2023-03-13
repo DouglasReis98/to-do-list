@@ -71,6 +71,7 @@ function editarTarefa(i) {
     if (novaTarefa.style.display = "block") {
         frm.reset();
         novaTarefa.style.display = "none"
+        
     }
 
     tarefas = JSON.parse(localStorage.getItem("outTarefa"));

@@ -4,6 +4,13 @@
 
 <br>
 
+Status: Concluído. Sujeito à atualizações.
+
+<br>
+
+Pré-requisito: Navegador atualizado.
+
+<br>
 ## Sumário
 
 - [Sobre](#Sobre)
@@ -12,7 +19,9 @@
     * [Concluindo uma Tarefa](#Concluindo-uma-tarefa)
     * [Excluindo uma Tarefa](#Excluindo-uma-tarefa)
     * [Editando uma Tarefa](#Editando-uma-tarefa)
-
+- [Linguagens e Recursos Usados](#Linguagens-e-Recursos-Usados)
+- [Links](#Links)
+- [Autor](#Autor)
 
 ## Sobre
 
@@ -69,10 +78,27 @@ Projeto de Lista de Tarefas dinâmica e funcional que usa o localStorage para ar
 #### Mobile<br>
 ![](./screenshots/screenshot-7-2.png)
 
-<p>Digite o novo nome e clique no botão verde para confirmar ou no botão vermelho para cancelar a edição</p>
+<p>Digite o novo nome e clique no botão verde para confirmar ou no botão vermelho para cancelar a edição.</p>
 
 #### Desktop<br>
 ![](./screenshots/screenshot-8-1.png)
 
 #### Mobile<br>
 ![](./screenshots/screenshot-8-2.png)
+
+## Linguagens e Recursos Usados
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
+
+
+## Links
+
+- URL do Projeto: [Click here](https://github.com/DouglasReis98/to-do-list)
+- URL da Página: [Click here](https://douglasreis98.github.io/to-do-list/)
+
+## Autor
+- Website - [Douglas Reis](http://douglasreis.epizy.com)
+- Frontend Mentor - [@DouglasReis98](https://www.frontendmentor.io/profile/DouglasReis98)
+- LinkedIn - [@douglas-reis98](https://www.linkedin.com/in/douglas-reis98/)
