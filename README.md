@@ -59,7 +59,15 @@ Projeto de Lista de Tarefas dinâmica e funcional que usa o localStorage para ar
 <p>Para dar uma tarefa como concluída, clique no botão verde e na janela de confirmação, clique em OK.</p>
 
 #### Desktop<br>
-![](./screenshots/screenshot-5.png)
+![](./screenshots/screenshot-5-1.png)
+
+<p>Ao confirmar, aparecerá na parte inferior a última tarefa concluída. Clique no X para fechá-la.</p>
+
+#### Desktop<br>
+![](./screenshots/screenshot-5-2.png)
+
+#### Mobile<br>
+![](./screenshots/screenshot-5-3.png)
 
 ### Excluindo uma Tarefa
 
